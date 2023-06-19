@@ -129,6 +129,9 @@ $router->register('GET', '/books', [BooksController::class, 'index']);
 ```
 Route request.
 ```php
+use Exception;
+use MVarkus\Routing\RouteNotFoundException;
+
 try {
     
     $result = $router->route($_SERVER['REQUEST_METHOD'], parse_url($_SERVER['REQUEST_URI'])['path']);
